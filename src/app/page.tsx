@@ -6,9 +6,14 @@ import ListItem from './components/ListItem';
 
 export default function Home() {
   const [imgRsrc, setImgRsrc] = useState("./assets/illustration-sign-up-mobile.svg");
+  const [windowWidth, setWindowWidth] = useState(0);
   useEffect(() => {
-    window.innerWidth >= 640 ? setImgRsrc("./assets/illustration-sign-up-desktop.svg") : setImgRsrc("./assets/illustration-sign-up-mobile.svg");
-  }, [window.innerWidth]);
+    setWindowWidth(window.innerWidth)
+  }, [])
+
+  useEffect(() => {
+    windowWidth >= 640 ? setImgRsrc("./assets/illustration-sign-up-desktop.svg") : setImgRsrc("./assets/illustration-sign-up-mobile.svg");
+  }, [windowWidth]);
 
   return (
     <>
