@@ -1,19 +1,26 @@
+"use client"
+import * as React from 'react';
+import { useEffect, useState } from 'react';
 import EmailForm from './components/EmailForm';
 import ListItem from './components/ListItem';
 
 export default function Home() {
-  return (
-    <div className="flex flex-col justify-center items-center
-      w-screen h-screen">
+  const [imgRsrc, setImgRsrc] = useState("./assets/illustration-sign-up-mobile.svg");
+  useEffect(() => {
+    window.innerWidth >= 640 ? setImgRsrc("./assets/illustration-sign-up-desktop.svg") : setImgRsrc("./assets/illustration-sign-up-mobile.svg");
+  }, [window.innerWidth]);
 
-      <main className="flex gap-8
-      w-7/12 h-fit
-      p-4 
+  return (
+    <>
+
+      <main className="flex flex-col-reverse sm:flex-row gap-8
+      w-screen h-screen sm:w-7/12 sm:h-fit
+      sm:p-4 
       bg-white rounded-3xl">
 
         <div className="flex flex-col justify-center gap-4
-          w-[55%]
-          p-4 pl-8">
+          sm:w-[55%]
+          p-4 sm:pl-8">
           <h1 className="text-[2.5rem] font-bold">Stay updated!</h1>
 
           <h2>Join 60,000+ product managers receiving monthly updates on:</h2>
@@ -28,18 +35,19 @@ export default function Home() {
         </div>
 
         <img
-          src="./assets/illustration-sign-up-desktop.svg"
-          alt="Wallpaper"
-          className="w-[45%] h-full object-cover rounded-xl" />
+          src={imgRsrc}
+          className="w-full sm:w-[45%] sm:h-full sm:object-cover rounded-xl" />
 
       </main>
 
-      <footer>
-        <p>
+      <footer className="w-full
+        p-2
+        bg-white">
+        <p className="text-[0.8rem]">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-          Coded by <a href="#">@santosesantos</a>.
+          Coded by <a className="text-blue-600" href="#">@santosesantos</a>.
         </p>
       </footer>
-    </div>
+    </>
   );
 }

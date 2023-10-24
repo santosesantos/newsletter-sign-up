@@ -16,7 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={`${roboto.className} flex flex-col justify-center items-center
+      w-screen h-screen pb-12`}>{children}</body>
     </html>
   )
 }

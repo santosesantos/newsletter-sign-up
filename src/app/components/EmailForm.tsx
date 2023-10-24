@@ -16,7 +16,7 @@ export default function EmailForm(props: IProps) {
 		if (!/^[\S]+@([\S]+\.)[\S]+/.test(email)) {
 			setIsError(true);
 		} else {
-			setIsSuccess(true)
+			setIsSuccess(true);
 		}
 	};
 
@@ -46,15 +46,17 @@ export default function EmailForm(props: IProps) {
 				bg-[--charcoal-grey-off]
 				top-0 left-0`}>
 
-				<div className="flex flex-col gap-4
-					w-[45%] h-1/2
+				<div className="flex flex-col gap-4 justify-between
+					w-full h-full sm:w-[45%] sm:h-1/2
 					p-6
 					rounded-xl bg-white">
 
-					<img src="./assets/icon-success.svg" alt="Success"
-						className="w-12" />
-					<h2 className="text-[2.5rem] font-bold">Thanks for subscribing!</h2>
-					<p>A confirmation email has been sent to {email}. Please open it and click the button inside to confirm your subscription.</p>
+					<div>
+						<img src="./assets/icon-success.svg" alt="Success"
+							className="w-12" />
+						<h2 className="text-[2.5rem] font-bold">Thanks for subscribing!</h2>
+						<p>A confirmation email has been sent to {email}. Please open it and click the button inside to confirm your subscription.</p>
+					</div>
 					<button className="w-full p-2 py-3
 						rounded-lg
 						text-white text-sm font-bold
