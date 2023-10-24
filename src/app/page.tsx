@@ -45,7 +45,7 @@ export default function Home() {
         bg-white">
         <p className="text-[0.8rem]">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-          Coded by <a className="text-blue-600" href="#">@santosesantos</a>.
+          Coded by <a className="text-blue-600" href="https://github.com/santosesantos" target="_blank">@santosesantos</a>.
         </p>
       </footer>
     </>
